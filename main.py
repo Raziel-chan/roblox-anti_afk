@@ -1,6 +1,7 @@
 import threading
 import time
 import pyautogui
+import pydirectinput
 from pynput import keyboard
 import logging
 anti_afk = False
@@ -47,9 +48,9 @@ def thread_function_anti_afk():
 
     while True:
         if anti_afk:
-            pyautogui.press('w')
-            pyautogui.press('space')
-            pyautogui.click()
+            pydirectinput.click()
+            pydirectinput.press('w')
+            pydirectinput.press('space')
             time.sleep(2)
 
 try:
